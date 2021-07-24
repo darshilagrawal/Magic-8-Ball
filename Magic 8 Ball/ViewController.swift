@@ -10,7 +10,14 @@ class ViewController: UIViewController {
 
 
     @IBAction func pressedButton(_ sender: UIButton) {
-        imageBall.image=ballArray.randomElement()
+        UIView.animate(withDuration: 0.1,
+                       delay: 0.1,
+                       options: UIView.AnimationOptions.curveEaseIn,
+                       animations: { () -> Void in
+                        self.imageBall.image=self.ballArray.randomElement()
+            }, completion: { (finished) -> Void in
+        })
+        
     }
 }
 
